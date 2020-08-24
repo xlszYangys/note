@@ -103,7 +103,7 @@ new Promise(function (resolve, reject) {
 });
 ```
 这段程序执行结果是:
-```javascript
+```text
 a / b = 0
 End
 ```
@@ -122,7 +122,7 @@ new Promise(function (resolve, reject) {
 });
 ```
 执行结果：
-```javascript
+```text
 1111
 2222
 3333
@@ -153,3 +153,70 @@ print(1000, "First").then(function () {
     print(3000, "Third");
 });
 ```
+
+##闭包
+	
+闭包是一种保护私有变量的机制，在函数执行时形成私有的作用域，保护里面的私有变量不受外界干扰。
+直观的说就是形成一个不销毁的栈环境。
+
+```javascript
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+ 
+add();
+add();
+add();
+ 
+// 计数器为 3
+```
+###实例解析
+变量 add 指定了函数自我调用的返回字值。
+自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。
+add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。
+这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。
+计数器受匿名函数的作用域保护，只能通过 add 方法修改。
+
+##JavaScript 验证 API
+```html
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">验证</button>
+<p id="demo"></p>
+ 
+<script>
+function myFunction() {
+    var inpObj = document.getElementById("id1");
+    if (inpObj.checkValidity() == false) {
+        document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    }
+}
+</script>
+```
+
+#Event.target
++ 触发事件的对象 (某个DOM元素) 的引用。当事件处理程序在事件的冒泡或捕获阶段被调用时，它与event.currentTarget不同。
++ event.target 属性可以用来实现事件委托 (event delegation)。
+
+```javascript
+// Make a list
+var ul = document.createElement('ul');
+document.body.appendChild(ul);
+
+var li1 = document.createElement('li');
+var li2 = document.createElement('li');
+ul.appendChild(li1);
+ul.appendChild(li2);
+
+function hide(e){
+  // e.target 引用着 <li> 元素
+  // 不像 e.currentTarget 引用着其父级的 <ul> 元素.
+  e.target.style.visibility = 'hidden';
+}
+
+// 添加监听事件到列表，当每个 <li> 被点击的时候都会触发。
+ul.addEventListener('click', hide, false);
+```
+
+##Web API 接口参考
+[Web API 接口参考](https://developer.mozilla.org/zh-CN/docs/Web/API)
