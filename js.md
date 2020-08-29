@@ -1,3 +1,98 @@
+##componentWillMount 和 componentDidMount的区别
+
+1、componentWillMount  将要装载，在render之前调用；
+
+      componentDidMount，（装载完成），在render之后调用
+
+2、componentWillMount  每一个组件render之前立即调用；
+
+      componentDidMount  render之后并不会立即调用，而是所有的子组件都render完之后才可以调用
+
+3、componentWillMount  可以在服务端被调用，也可以在浏览器端被调用；
+
+      componentDidMount  只能在浏览器端被调用，在服务器端使用react的时候不会被调用
+
+
+
+[node-sass 安装失败的各种坑](https://www.jianshu.com/p/92afe92db99f)
+
+###ubuntu 20.04版本更新软件源为国内源（清华、网易、阿里云等等）
+```bash
+/etc/apt/sources.list
+
+deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+
+sudo apt update 
+sudo apt upgrade
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+devRedict
+
+##[在React中使用react-router-dom路由](https://www.jianshu.com/p/8954e9fb0c7e)
+
+
+
+###git modified
++ 目录没有被跟踪
+
+##git restore --staged <file>...
+[git restore](https://www.jianshu.com/p/dcef204dba74)
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+  
+  
+rebase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## JavaScript 异步编程
 
 [JavaScript 异步编程](https://www.runoob.com/js/js-async.html)
