@@ -18,7 +18,7 @@
 
 ###ubuntu 20.04版本更新软件源为国内源（清华、网易、阿里云等等）
 ```bash
-/etc/apt/sources.list
+sudo vim  /etc/apt/sources.list
 
 deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
@@ -35,11 +35,23 @@ sudo apt update
 sudo apt upgrade
 ```
 
++ dd      
+    + 删除光标所在的行，其实也是剪切
++ ndd    
+    + n表示数字，删除光标所在的向下n行
++ d1G   
+    + 删除光标所在行到第一行数据
++ dG     
+    + 删除光标所在行到最后一行数据
++ d0      
+    + 删除光标所在到该行第一个字符
++ d$      
+    + 删除光标所在到该行最后一个字符
 
-
-
-
-
+通过改变地址来使用淘宝镜像
+npm的默认地址是https://registry.npmjs.org/
+可以使用npm config get registry查看npm的仓库地址
+可以使用npm config set registry https://registry.npm.taobao.org来改变默认下载地址，达到可以不安装cnpm就能采用淘宝镜像的目的，然后使用上面的get命令查看是否成功。
 
 
 
